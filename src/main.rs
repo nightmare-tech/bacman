@@ -1,3 +1,7 @@
+pub mod modules;
+
+use modules::config;
 fn main() {
-    println!("Hello, world!");
+   let paths = config::deserialise_config();
+   dbg!(&paths);
 }
