@@ -86,7 +86,6 @@ impl Config {
             })
             .collect()
     }
-
     pub fn validate(&self) -> Result<(), ConfigError> {
         let mut errors = Vec::new();
 
@@ -180,4 +179,13 @@ pub fn deserialize_config() -> Result<Vec<ResolvedBackupPath>, String> {
                     Ok(config.resolve_backup_paths())
                 })
         })
+}
+
+pub fn extract_paths(configs: &Vec<ResolvedBackupPath>) -> Vec<String> {
+    let mut paths: Vec<String> = vec![];
+    for config in configs {
+        let i = config.path.clone();
+        paths.push(i);
+    }
+    paths
 }
