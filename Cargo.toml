@@ -7,3 +7,4 @@ edition = "2021"
 toml = "0.8.19"
 serde = { version = "1.0.215", features = ["derive"] }
 directories = "5.0.1"
+thiserror = "2.0.3"
